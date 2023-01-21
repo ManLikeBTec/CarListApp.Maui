@@ -15,7 +15,7 @@ namespace CarListApp.Maui.ViewModels
     public partial class CarDetailsViewModel : BaseViewModel, IQueryAttributable
     {
         private readonly CarApiService carApiService;
-
+         
         public CarDetailsViewModel(CarApiService carApiService)
         {
             this.carApiService = carApiService;

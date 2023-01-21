@@ -24,11 +24,17 @@ public static class MauiProgram
 
 		//singleton is single instance throughout life of application run.
 		builder.Services.AddSingleton<CarListViewModel>();
-		//transient gets new instance of page everytime.
-		builder.Services.AddTransient<CarDetailsViewModel>();
+        //transient gets new instance of page everytime.
+        builder.Services.AddSingleton<LoadingPageViewModel>();
+        builder.Services.AddSingleton<LoginPageViewModel>();
+        builder.Services.AddSingleton<LogoutPageViewModel>();
+        builder.Services.AddTransient<CarDetailsViewModel>();
 
 		builder.Services.AddSingleton<MainPage>();
-		builder.Services.AddTransient<CarDetailsPage>();
+        builder.Services.AddSingleton<LoadingPage>();
+        builder.Services.AddSingleton<LoginPage>();
+        builder.Services.AddSingleton<LogoutPage>();
+        builder.Services.AddTransient<CarDetailsPage>();
 
 		return builder.Build();
 	}
